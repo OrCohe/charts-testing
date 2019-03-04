@@ -19,22 +19,53 @@ const chartData = {
   datasets:[
     {
       label:'Population',
-      data:[
+      data:
+      [
+        789639,
+        259579,
+        200234
+      ],
+      backgroundColor:
+      [
+        'transparent',
+        'transparent',
+        'transparent'
+      ],
+      hoverBorderWidth: [
+        5,5,5
+      ],
+      hoverBorderColor: [
+        'green','blue','red'
+      ]
+    },
+    {
+      label:'Population',
+      data:
+      [
         617594,
         181045,
+        null,
         153060,
         106519,
+        null,
         105162,
-        95072
+        95072,
+        null
       ],
-      backgroundColor:[
-        'rgba(255, 99, 132, 0.6)',
-        'rgba(54, 162, 235, 0.6)',
-        'rgba(255, 206, 86, 0.6)',
-        'rgba(75, 192, 192, 0.6)',
-        'rgba(153, 102, 255, 0.6)',
-        'rgba(255, 159, 64, 0.6)',
-        'rgba(255, 99, 132, 0.6)'
+      backgroundColor:
+      [
+        'red',
+        'green',
+        null,
+        'yellow',
+        'brown',
+        null,
+        'blue',
+        'brown',
+        null
+      ],
+      borderWidth: [
+        0,0,5,0,0,5,0,0,2
       ]
     }
   ]
@@ -44,8 +75,8 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <BigCircle data={data}/>
-        {/* <Chart chartData={chartData} location="Massachusetts" legendPosition="bottom"/> */}
+        {/* <BigCircle data={data}/> */}
+        <Chart chartData={chartData} location="Massachusetts" legendPosition="right" displayLegend={false} displayTitle={false}/>
       </div>
     );
   }

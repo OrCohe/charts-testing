@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
-import {Bar, Line, Pie} from 'react-chartjs-2';
+import 'chartjs-plugin-datalabels';
+import { Bar, Line, Pie } from 'react-chartjs-2';
 
 class Chart extends Component {
-    render() { 
+    render() {
         const { chartData, displayTitle, location, displayLegend, legendPosition } = this.props
-        return ( 
-            <div>
+        return (
+            <div style={{height: '1000px', width: '1000px'}}>
                 <Pie
                     data={chartData}
                     options={{
@@ -17,12 +18,19 @@ class Chart extends Component {
                         legend: {
                             display: displayLegend,
                             position: legendPosition
-                        }
+                        },
+                        plugins: {
+                            datalabels: {
+                               display: true,
+                               color: 'black'
+                            },
+                         },
+                        
                     }}
                 />
             </div>
-         );
+        );
     }
 }
- 
+
 export default Chart;
