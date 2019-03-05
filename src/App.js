@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import Circle from './components/graphs/circle';
 import BigCircle from './components/graphs/bigCircle';
 import Chart from './components/graphs/chartjs';
+import ExpandableTableRow from './components/table/expended';
+import Demo from './components/table/dx';
 
 const data = [
   ['age','sleeping per day'],
@@ -35,7 +37,7 @@ const chartData = {
         5,5,5
       ],
       hoverBorderColor: [
-        'green','blue','red'
+        'grey','grey','grey'
       ]
     },
     {
@@ -70,13 +72,22 @@ const chartData = {
     }
   ]
 }
-
+const items = {
+  a: "aaaa",
+  b: "bbbb",
+  c: "cccc",
+  d: "dddd",
+  e: "eeee",
+  f: "ffff"
+}
 class App extends Component {
   render() {
     return (
       <div className="App">
         {/* <BigCircle data={data}/> */}
-        <Chart chartData={chartData} location="Massachusetts" legendPosition="right" displayLegend={false} displayTitle={false}/>
+        {/* <Chart chartData={chartData} location="Massachusetts" legendPosition="right" displayLegend={false} displayTitle={false}/> */}
+        {/* <ExpandableTableRow item={items}/> */}
+        <Demo />
       </div>
     );
   }

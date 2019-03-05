@@ -6,7 +6,7 @@ class Chart extends Component {
     render() {
         const { chartData, displayTitle, location, displayLegend, legendPosition } = this.props
         return (
-            <div style={{height: '1000px', width: '1000px'}}>
+            <div style={{maxHeight: '1000px', maxWidth: '1000px', position: 'relative'}}>
                 <Pie
                     data={chartData}
                     options={{
@@ -21,9 +21,16 @@ class Chart extends Component {
                         },
                         plugins: {
                             datalabels: {
-                               display: true,
-                               color: 'black'
-                            },
+                                display: true,
+                                color: 'black',
+                                formatter: value => {
+                                    if (value === null) return null;
+                                    console.log(value)
+                                    const max = 1258452 ;
+                                    return Math.round(value/max*100) + '%';
+                                }
+                            }
+                            
                          },
                         
                     }}
